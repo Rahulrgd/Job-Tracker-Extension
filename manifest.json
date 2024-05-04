@@ -1,9 +1,36 @@
 {
   "manifest_version": 3,
   "name": "Job Tracker Extention",
-  "description": "Base Level Extension",
+  "description": "Helps you to directly add you job to you account in job-tracker web app.",
   "version": "1.0",
+  "icons": {
+    "48": "icon.png",
+    "128": "icon.png"
+  },
+  "permissions": [
+    "tabs",
+    "scripting"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.linkedin.com/*"
+      ],
+      "css": [
+        "linkedin.css"
+      ],
+      "js": [
+        "jquery.js",
+        "linkedin.js"
+      ]
+    }
+  ],
   "action": {
-    "default_popup": "./HTML_Folder/hello.html"
-  }
+    "default_popup": "./popup/popup.html"
+  },
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self'",
+    "sandbox": "sandbox allow-scripts; script-src 'self' https://cdn.jsdelivr.net"
+  },
+  "background": {}
 }
