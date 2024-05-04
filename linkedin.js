@@ -76,7 +76,7 @@ function sendPostRequest(jobDetails) {
   };
 
   // =========================Send the POST request===============================
-  fetch("http://localhost:5000/v1/add-job", requestData)
+  fetch("http://job-tracker-2-version-env.eba-rimccpcb.eu-north-1.elasticbeanstalk.com/v1/add-job", requestData)
     .then((response) => {
       if (response.status === 401) {
         $("#add-to-job-tracker").css("background-color", "red");

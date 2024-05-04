@@ -34,7 +34,7 @@ $(document).ready(function () {
 
     // Send POST request to authenticate endpoint
     $.ajax({
-      url: "http://localhost:5000/authenticate",
+      url: "http://job-tracker-2-version-env.eba-rimccpcb.eu-north-1.elasticbeanstalk.com/authenticate",
       type: "POST",
       contentType: "application/json",
       data: JSON.stringify({
